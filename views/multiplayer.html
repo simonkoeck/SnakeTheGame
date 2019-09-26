@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/multiplayer.css" rel="stylesheet" type="text/css" />
+    <title>Snake - Multiplayer</title>
+    <meta charset="UTF-8" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/multiplayer.js"></script>
+</head>
+
+<body onload="init()">
+    <div id="title">SNAKE</div>
+    <canvas id="canvas" widht="300" height="300"></canvas>
+    <ul class="messages">
+    </ul>
+    <div class="footer">
+        <div id="highscore"></div>
+        <div class="warnings"><img id="warningImage" src="https://uploads.codesandbox.io/uploads/user/4e15117e-7ebe-4e34-9d85-e43085b4ae3a/vu6Z-danger.png" /><div id="warningText">WARNING: THIS GAME MAKES ADDICTED!</div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: #161717;
+    text-align: center;
+    margin: 0;
+    margin-top: 3%;
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+}
+
+#canvas {
+    border: whitesmoke 2px solid;
+}
+
+.controlls img {
+    width: 15%;
+    margin: 20px;
+}
+
+#title {
+    font-size: 36px;
+    color: white;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+}
+
+#msg,
+#newHighscore {
+    color: white;
+}
+
+#highscore {
+    margin: 27px;
+    color: white;
+    font-size: 15px;
+}
+
+#warningText {
+    font-size: 12px;
+}
+
+#warningImage {
+    width: 20px;
+}
+
+/*
+  WRITE ANIMATION
+*/
+.writeEffect {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: typing 12s steps(120, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+.messages {
+    list-style-type: none;
+}
+  
