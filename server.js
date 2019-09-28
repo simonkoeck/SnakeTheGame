@@ -12,20 +12,12 @@ app.get("/multiplayer", (req, res) => {
 })
 
 var glx = require("greenlock-express").create({
-    server: "https://acme-v02.api.letsencrypt.org/directory",
-    // Note: If at first you don't succeed, stop and switch to staging:
-    // https://acme-staging-v02.api.letsencrypt.org/directory
-    version: "draft-11", // Let's Encrypt v2 (ACME v2)
-
-    // If you wish to replace the default account and domain key storage plugin
+    version: "draft-11",
     store: require("le-store-certbot"),
     email: "simon.koeck@hak-feldkirch.at",
     agreeTos: true,
-    // Contribute telemetry data to the project
+    app: app,
     telemetry: true,
-
-    // the default servername to use when the client doesn't specify
-    // (because some IoT devices don't support servername indication)
     servername: "snakethegame.tk"
 });
 
