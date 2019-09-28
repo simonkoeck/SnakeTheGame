@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\certs",
     "\\public",
     "\\views"
   ],
-  "SelectedNode": "\\public\\multiplayer.js",
+  "SelectedNode": "\\certs",
   "PreviewInSolutionExplorer": false
 }
