@@ -29,10 +29,9 @@ var glx = require("greenlock-express").create({
     servername: "snakethegame.tk"
 });
 
-var server = glx.listen(80, 443, function () {
+var listener = glx.listen(5000, 5001, function () {
     console.log("Listening on port 80 for ACME challenges and 443 for express app.");
 });
-var listener = glx.listen(5000, 5001);
 
 //MULTIPLAYER
 var clients = [];
