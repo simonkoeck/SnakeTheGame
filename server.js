@@ -11,21 +11,28 @@ app.get("/multiplayer", (req, res) => {
     res.sendFile(__dirname + "/views/multiplayer.html");
 })
 
-var greenlock = require("greenlock-express")
-    .create({
-        email: "simon.koeck@hak-feldkirch.at", // The email address of the ACME user / hosting provider
-        agreeTos: true, // You must accept the ToS as the host which handles the certs
-        configDir: "./certs/", // Writable directory where certs will be saved
-        communityMember: true, // Join the community to get notified of important updates
-        telemetry: true, // Contribute telemetry data to the project
-        store: require('greenlock-store-fs'),
-        // Using your express app:
-        // simply export it as-is, then include it here
-        app: app
+var glx = require("greenlock-express").create({
+    server: "https://acme-v02.api.letsencrypt.org/directory",
+    // Note: If at first you don't succeed, stop and switch to staging:
+    // https://acme-staging-v02.api.letsencrypt.org/directory
+    version: "draft-11", // Let's Encrypt v2 (ACME v2)
 
-        //, debug: true
-    })
-var listener = greenlock.listen(5000, 5001);
+    // If you wish to replace the default account and domain key storage plugin
+    store: require("le-store-certbot"),
+    email: "simon.koeck@hak-feldkirch.at",
+    agreeTos: true,
+    // Contribute telemetry data to the project
+    telemetry: true,
+
+    // the default servername to use when the client doesn't specify
+    // (because some IoT devices don't support servername indication)
+    servername: "snakethegame.tk"
+});
+
+var server = glx.listen(80, 443, function () {
+    console.log("Listening on port 80 for ACME challenges and 443 for express app.");
+});
+var listener = glx.listen(5000, 5001);
 
 //MULTIPLAYER
 var clients = [];
