@@ -1,3 +1,3 @@
 # SnakeTheGame
 
-Official website: snakethegame.glitch.me
+Official website: https://snakethegame.glitch.me
