@@ -13,7 +13,7 @@
   "author": "Simon Köck",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "greenlock-express": "^2.7.17",
     "greenlock-store-fs": "^3.0.2",
     "socket.io": "^2.3.0"
